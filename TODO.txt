@@ -1,0 +1,10 @@
+
+Protocol Format:
+- use variable size id and size for making it flexible
+- variable size is easy in simulink, just make vector of constant for id
+
+Simulink Decoder:
+- cannot work with variable size udp packet
+- cannot compute parameter of udp block automatically
+- solution: pick list of id (and sizes) and spit out data for id and its associated enabler, then attach a decoder with exact size
+    semantics: discard all replicated id or if multiple specified ...
